@@ -16,4 +16,3 @@ class Solution:
                 completeStr += '0'
 
         return int(completeStr, 2)
-

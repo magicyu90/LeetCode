@@ -5,6 +5,7 @@
 # Note:
 # 0 ≤ x, y < 231.
 
+
 class Solution:
     def hammingDistance(self, x, y):
         """

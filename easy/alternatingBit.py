@@ -15,7 +15,7 @@ class Solution:
         """
         numStr = bin(n)[2:]
         # 我的思路：奇数位是1 偶数位0
-        return not('0' in bin(n)[2:][::2] or '1' in bin(n)[2:][1::2])
+        return not('0' in numStr[::2] or '1' in numStr[1::2])
         # 向右移一位，然后进行按位与(&)操作 ，判断是否为0
         # return (a & (a >> 1)) == 0;
 

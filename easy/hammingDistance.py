@@ -13,15 +13,17 @@ class Solution:
         :type y: int
         :rtype: int
         """
-        binaryX = '{0:032b}'.format(x)
-        binaryY = '{0:032b}'.format(y)
-        defCount = 0
-        for index, value in enumerate(binaryX):
-            if value != binaryY[index]:
-                defCount += 1
+        # binaryX = '{0:032b}'.format(x)
+        # binaryY = '{0:032b}'.format(y)
+        # defCount = 0
+        # for index, value in enumerate(binaryX):
+        #     if value != binaryY[index]:
+        #         defCount += 1
 
-        print('defCount:', defCount)
+        # return defCount
+        # 按位异或 然后算1的个数
+        return bin(x ^ y).count('1')
 
 
 solution = Solution()
-solution.hammingDistance(1, 4)
+print(solution.hammingDistance(1, 4))

@@ -11,7 +11,7 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
-        # 我的思路：便利数组，遇到1进行累加，否则记录当前size并归0，返回size最大值
+        # 我的思路：遍历数组，遇到1进行累加，否则记录当前size并归0，返回size最大值
         maxSizeArr = []
         size = 0
         length = len(nums)

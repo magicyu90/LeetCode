@@ -19,6 +19,7 @@ class Solution:
         rows = len(grid)
         columns = len(grid[0])
 
+        # 我的思路：扩展成大一圈的正方形
         for i in range(rows):
             grid[i].insert(0, 0)
             grid[i].append(0)
@@ -45,8 +46,16 @@ class Solution:
         return premiter
 
         # 也可以换一个思路，查看当前1的方块的右方和下方是否是1，若是则减2
+        for i in range(rows):
+            for j in range(columns):
+                if grid[i][j]:
+                    premiter += 4
+                    if j + 1 < columns and grid[i][j + 1]:
+                        premiter -= 2
+                    if i + 1 < rows and grid[i + 1][j]:
+                        premiter -= 2
+        return premiter
+
+
 solution = Solution()
-solution.islandPerimeter([[0, 1, 0, 0],
-                          [1, 1, 1, 0],
-                          [0, 1, 0, 0],
-                          [1, 1, 0, 0]])
+print(solution.islandPerimeter([[1, 0]]))

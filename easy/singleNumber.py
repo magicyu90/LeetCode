@@ -1,3 +1,4 @@
+# coding:utf-8
 class Solution:
     """
     136. Single Number
@@ -14,16 +15,21 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
-        nums.sort()
-        length = len(nums)
-        if length < 2:
-            return nums[0]
-        for i in range(0, length, 2):
-            if i == length - 1:
-                return nums[i]
-            else:
-                if nums[i] != nums[i + 1]:
-                    return nums[i]
+        # nums.sort()
+        # length = len(nums)
+        # if length < 2:
+        #     return nums[0]
+        # for i in range(0, length, 2):
+        #     if i == length - 1:
+        #         return nums[i]
+        #     else:
+        #         if nums[i] != nums[i + 1]:
+        #             return nums[i]
+        # 换个思路：按位进行异或操作
+        res = 0
+        for num in nums:
+            res ^= num
+        return res
 
 
 solution = Solution()

@@ -1,36 +1,25 @@
+# coding=utf-8
 class Solution:
+    """
+    A self-dividing number is a number that is divisible by every digit it contains.
+    For example, 128 is a self-dividing number because 128 % 1 == 0, 128 % 2 == 0, and 128 % 8 == 0.
+    Also, a self-dividing number is not allowed to contain the digit zero.
+    Given a lower and upper number bound, output a list of every possible self dividing number, including the bounds if possible.
+    """
+
     def selfDividingNumbers(self, left, right):
         """
         :type left: int
         :type right: int
         :rtype: List[int]
         """
-        # resultArr = []
-        # for number in range(left, right + 1):
-        #     numberStr = str(number)
-        #     isOK = True
-        #     for char in numberStr:
-        #         if char == '0':
-        #             isOK = False
-        #             break
-        #         if number % int(char) != 0:
-        #             isOK = False
-        #             break
-        #     if isOK == True:
-        #         resultArr.append(number)
-        # return resultArr
+        # def is_self_dividing(num):
+        #     return '0' not in str(num) and all([num % int(digit) == 0 for digit in str(num)])
+        # return filter(is_self_dividing, range(left, right + 1))
 
-        result = filter(Solution.check, range(left, right + 1))
-        print('result:', result)
-        return result
-
-    @staticmethod
-    def check(num):
-        digits = set(map(int, str(num)))
-        if 0 in digits:
-            return False
-        return not any(num % d for d in digits)
-
+        def check(num):
+            return '0' not in str(num) and all([num % int(digit) == 0 for digit in str(num)])
+        return filter(check, range(left, right + 1))
 
 solution = Solution()
-solution.selfDividingNumbers(1, 300)
+print(solution.selfDividingNumbers(1, 22))

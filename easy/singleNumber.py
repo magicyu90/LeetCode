@@ -7,7 +7,7 @@ class Solution:
     Note:
     Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
 
-
+    要求时间的复杂度是O(n)-线性时间 例如，一个计算列表所有元素的和的程序，需要的时间与列表的长度成正比
     """
 
     def singleNumber(self, nums):

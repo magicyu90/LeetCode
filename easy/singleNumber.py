@@ -15,6 +15,7 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
+        import functools
         # nums.sort()
         # length = len(nums)
         # if length < 2:
@@ -26,10 +27,11 @@ class Solution:
         #         if nums[i] != nums[i + 1]:
         #             return nums[i]
         # 换个思路：按位进行异或操作
-        res = 0
-        for num in nums:
-            res ^= num
-        return res
+        # res = 0
+        # for num in nums:
+        #     res ^= num
+        # return res
+        return functools.reduce(lambda x, y: x ^ y, nums)
 
 
 solution = Solution()

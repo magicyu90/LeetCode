@@ -1,8 +1,9 @@
 # coding :utf-8
 class Solution:
     """
-    You're now a baseball game point recorder.
+    682. Baseball Game
 
+    You're now a baseball game point recorder.
     Given a list of strings, each string can be one of the 4 following types:
 
     Integer (one round's score): Directly represents the number of points you get in this round.

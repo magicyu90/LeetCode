@@ -1,4 +1,11 @@
 class Solution:
+    """
+    500. Keyboard Row
+    
+    Example 1:
+    Input: ["Hello", "Alaska", "Dad", "Peace"]
+    Output: ["Alaska", "Dad"]
+    """
     def findWords(self, words):
         """
         :type words: List[str]

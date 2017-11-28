@@ -2,6 +2,7 @@
 class Solution:
     """
     566. Reshape the Matrix
+    
     Input:
         nums =
         [[1,2],

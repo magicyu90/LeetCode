@@ -28,8 +28,11 @@ class Solution:
         #             break
         #     ans.append(output)
         # return ans
-        
+
         # Use stack to find all
+        # 1.循环nums2，先把当前值入栈
+        # 2.查看后面的值，如果有大于栈里的值，字典表赋值，key：当前值 value:比他的值
+        # 3.栈pop最上端的值
         d = {}
         stack = []
         for num in nums2:
@@ -39,7 +42,7 @@ class Solution:
                 else:
                     break
             stack.append(num)
-        
+
         # Loop to find the result
         return [d[num] if num in d else -1 for num in nums1]
 

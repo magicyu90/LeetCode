@@ -2,6 +2,7 @@
 class Solution:
     """
     693. Binary Number with Alternating Bits
+    
     Input: 5
     Output: True
     Explanation:

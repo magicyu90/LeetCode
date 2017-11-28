@@ -1,4 +1,10 @@
 class Solution:
+    """
+    344. Reverse String
+
+    Example:
+    Given s = "hello", return "olleh".
+    """
     def reverseString(self, s):
         """
         :type s: str

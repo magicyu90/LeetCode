@@ -9,6 +9,7 @@ class Solution:
     [4,1] is not optimal compared to [2,2]. So the length L is 2, and the width W is 2.
 
     """
+    import math
 
     def constructRectangle(self, area):
         """
@@ -37,5 +38,7 @@ class Solution:
                 return [int(area / num), num]
 
 
+import math
 solution = Solution()
 print(solution.constructRectangle(9999991))
+print(int(math.sqrt(8)))

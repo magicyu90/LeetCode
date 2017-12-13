@@ -102,14 +102,18 @@ class BinaryTree():
         """利用栈实现先序遍历"""
         stack = []
         current = self.root
+        total = 0
         while current or stack:
             while current:
                 print(current.value, end=' ')
                 stack.append(current)
                 current = current.lchild
-
+                if current is not None:
+                    if current.lchild is None and current.rchild is None:
+                        total += current.value
             current = stack.pop()
             current = current.rchild
+        print('\ntotal:', total)
 
     def stack_lvr(self):
         """利用栈实现中序遍历"""
@@ -124,11 +128,22 @@ class BinaryTree():
             print(current.value, end=' ')
             current = current.rchild
 
+    def invert_tree(self, root: Node):
+        """左右交换"""
+        if root.lchild is not None and root.rchild is not None:
+            temp = root.lchild.value
+            root.lchild.value = root.rchild.value
+            root.rchild.value = temp
+        if root.lchild is not None:
+            self.invert_tree(root.lchild)
+        if root.rchild is not None:
+            self.invert_tree(root.rchild)
+
 
 if __name__ == '__main__':
     print('Here is main')
     tree = BinaryTree()
-    for i in [3, 9, 20, 15, 7]:
+    for i in [3, 7]:
         tree.add(i)
 
     print('先序遍历结果:', end=' ')
@@ -157,4 +172,9 @@ if __name__ == '__main__':
 
     print('根据栈中序遍历结果:', end=' ')
     tree.stack_lvr()
+    print('\n')
+
+    print('左右交换:', end=' ')
+    tree.invert_tree(tree.root)
+    tree.level_scan()
     print('\n')

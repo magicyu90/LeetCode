@@ -138,6 +138,38 @@ class BinaryTree():
             self.invert_tree(root.lchild)
         if root.rchild is not None:
             self.invert_tree(root.rchild)
+            
+    def count_tree_width(self):
+        """计算二叉树的宽度"""
+        ans = []
+        queue = []
+        current = self.root
+        queue.append(current)
+        current_width = 1
+        while queue:
+            n = current_width
+            ans.append(current_width)
+            for i in range(n):
+                current = queue.pop(0)
+                current_width -= 1
+                if current.lchild is not None:
+                    queue.append(current.lchild)
+                    current_width += 1
+                if current.rchild is not None:
+                    queue.append(current.rchild)
+                    current_width += 1
+        print(max(ans))
+
+    def count_tree_depth(self, root: Node):
+        """计算二叉树深度"""
+        if root is None:
+            return 0
+        left_depth = self.count_tree_depth(root.lchild)
+        right_depth = self.count_tree_depth(root.rchild)
+        if left_depth > right_depth:
+            return left_depth + 1
+        if right_depth >= left_depth:
+            return right_depth + 1
 
 
 if __name__ == '__main__':
@@ -177,4 +209,10 @@ if __name__ == '__main__':
     print('左右交换:', end=' ')
     tree.invert_tree(tree.root)
     tree.level_scan()
+    print('计算二叉树的宽度:', end=' ')
+    tree.count_tree_width()
+    print('\n')
+
+    print('计算二叉树的深度:', end=' ')
+    print(tree.count_tree_depth(tree.root))
     print('\n')
